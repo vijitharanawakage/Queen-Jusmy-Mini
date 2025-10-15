@@ -1,20 +1,20 @@
-# Base image with Node.js
-FROM node:18-alpine
+# Use Node.js LTS
+FROM node:20
 
-# Set working directory
+# Create working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json first (for caching dependencies)
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
+# Install only production dependencies
 RUN npm install --production
 
-# Copy all other files
+# Copy rest of the project files
 COPY . .
 
-# Expose your app port (from index.js)
+# Render exposes PORT automatically
 EXPOSE 8000
 
-# Start the app
+# Start app (index.js is your entry)
 CMD ["node", "index.js"]
