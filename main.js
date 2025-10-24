@@ -11,7 +11,7 @@ const axios = require('axios');
 const { default: makeWASocket, useMultiFileAuthState, delay, makeCacheableSignalKeyStore,  Browsers, DisconnectReason, jidDecode } = require('@whiskeysockets/baileys');
 const yts = require('yt-search');
 
-const MONGODB_URI = 'mongodb://localhost:27017/newPublic';
+const MONGODB_URI = 'mongodb://mongo:hSKOyytRSHAikyAFUajcmkoJTEcgoBTR@trolley.proxy.rlwy.net:29757';
 const OWNER_NUMBERS = [];
 
 mongoose.connect(MONGODB_URI, {
